@@ -1,0 +1,105 @@
+.appContent {
+    @apply m-0 p-3 block text-xs bg-[#2b192a] text-white min-h-screen relative;
+
+    .loading {
+        @apply absolute top-0 left-0 h-[50%] w-[50%] bg-slate-500;
+    }
+
+    .search-Wrapper {
+        @apply flex justify-center z-10 relative;
+
+        .search {
+            @apply flex justify-center items-center py-3 px-9 bg-[#ffffff] w-[30%] max-sm:w-[90%] rounded-md transition-all ease-out;
+
+            input {
+                @apply bg-transparent outline-none flex-1 text-[#000];
+            }
+
+            &:hover {
+                @apply w-[50%] max-sm:w-[95%];
+            }
+
+        }
+    }
+
+    .player-wrapper {
+        @apply pt-5 flex flex-col justify-center items-center relative;
+
+        .player {
+            @apply transition-all ease-in bg-[#2a2141] p-[28px] rounded-[10px] py-[50px] px-[38px] h-[650px] max-sm:h-[600px] w-fit flex flex-col items-center justify-center;
+
+            img {
+                @apply w-[400px] h-[400px] max-sm:w-[300px] max-sm:h-[300px] object-cover rounded-md;
+            }
+
+            h2 {
+                @apply text-3xl font-bold mt-7 w-[450px] max-sm:w-[250px] text-center;
+            }
+
+            h3 {
+                @apply text-2xl w-[450px] max-sm:w-[250px] text-center;
+            }
+
+            .controls {
+                @apply flex justify-between w-full text-[#e1e1e6] mt-7;
+
+
+                .prev {}
+
+                .play {}
+
+                .next {}
+            }
+
+            .track-time {
+                @apply w-full;
+
+                .track {
+                    @apply relative mt-7;
+
+                    &::before {
+                        @apply bg-[#d9d9d9] opacity-[0.3] rounded-[10px] w-full h-[6px] block absolute;
+                        content: "";
+                    }
+
+                    &::after {
+                        @apply bg-[#d9d9d9] rounded-[10px] w-[80%] h-[6px] block;
+                        content: "";
+                    }
+                }
+
+                .time {
+                    @apply text-xs text-[#c4c4cc] flex opacity-[0.7] justify-between mt-[9.6px];
+
+                    .total-time {}
+
+                    .last-time {}
+                }
+            }
+        }
+    }
+
+    .visibility {
+        @apply flex flex-col gap-[15px] fixed z-[3] top-5 right-5 py-5 px-[10px] rounded-xl text-center shadow-md bg-[#2a2141] mt-7;
+
+        .eye {
+            @apply cursor-pointer h-6 w-6 text-white;
+        }
+
+        .btn-play-video {
+            @apply cursor-pointer h-6 w-6 text-white;
+        }
+
+        #btn-minimize {
+            @apply cursor-pointer h-6 w-6 text-white;
+        }
+    }
+
+    .minimize {
+        @apply fixed bottom-[-600px] ease-out max-sm:bottom-[-470px];
+    }
+
+    .hidden{
+        display: none !important;
+    }
+}
